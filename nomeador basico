@@ -1,0 +1,23 @@
+
+nome = ""
+
+while len(nome) == 0:
+    nome = str(input("bota teu nome? "))
+
+letras = len(nome)
+print(f"teu nome tem {letras} letras")
+
+a = 0
+while a < len(nome):
+    print(nome[a])
+    a = a + 1
+
+# ao contrario
+
+print("seu nome ao contrario")
+
+b = len(nome)
+b = b - 1
+while b >= 0:
+    print(nome[b])
+    b = b - 1
