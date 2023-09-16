@@ -1,0 +1,200 @@
+for(int i = 0; i<(escolhasCertas.length);i++ )
+            {
+                if(escolha == escolhasCertas[i])
+                {
+                    parar = 1;
+                }
+            }
+            if(parar == 0)
+            {
+                throw new RuntimeException("valor nao encontrado!");
+            }
+            else{
+                System.out.printf("boa");
+            }
+
+
+
+
+
+
+
+            import java.text.CollationElementIterator;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.Scanner;
+import javax.management.RuntimeErrorException;
+
+
+
+public class Baralho
+{   
+    //deu pau
+    public static void criarJogador()
+    {
+        System.out.println("criar jogador");
+                    numeroJogadores++;
+                    Jogador jogador = new Jogador(numeroJogadores);
+                    listaJogadores.add(jogador);
+                    System.out.printf("jogador adicionado com exito");
+    }
+
+    public static int numeroParaNome(int numero)
+    {
+        
+        if(numero == 11)
+        {
+            System.out.printf("Valéte(11) de ");
+            return(0);
+        }
+
+        else if (numero == 12)
+        {
+            System.out.printf("Rainha(12) de ");
+            return(0);
+        }
+
+        else if (numero == 13)
+        {
+            System.out.printf("Rei(13) de ");
+            return(0);
+        }
+
+        else
+        return(1);
+                    
+    }
+
+    public static void main(String[] args)
+        {
+            //lista
+            ArrayList<Cartas>  lista = new ArrayList();
+            ArrayList<Jogador> listaJogadores = new ArrayList();
+            int numeroJogadores = 1;
+            Jogador jogador1 = new Jogador(numeroJogadores);
+            listaJogadores.add(jogador1);
+            
+
+
+            //adicionando cartas
+            for(int i =1; i<=13; i++)
+            {
+                Cartas carta;
+                carta = new Cartas(i, 0, "ouro");
+                lista.add(carta);
+            }
+
+            for(int i =1; i<=13; i++)
+            {
+                Cartas carta;
+                carta = new Cartas(i, 1, "copa");
+                lista.add(carta);
+            }
+
+            for(int i =1; i<=13; i++)
+            {
+                Cartas carta;
+                carta = new Cartas(i, 2, "espada");
+                lista.add(carta);
+            }
+
+            for(int i =1; i<=13; i++)
+            {
+                Cartas carta;
+                carta = new Cartas(i, 3, "paus");
+                lista.add(carta);
+            }
+            //aleatorio
+            Collections.shuffle(lista);
+
+            //imprimindo
+            for(int i=0; i<= 51; i++)
+            {
+            
+                int n = numeroParaNome(lista.get(i).numero);
+                if(n ==1)
+                    System.out.printf("%d ", lista.get(i).numero);
+
+                System.out.printf("%s\n", lista.get(i).naipeNome);
+            }
+           
+            System.out.printf("insira: 1 para criar um novo jogador\n        2 para escolher um jogador ja existente\n");
+            
+            
+            //scaner
+            Scanner escaner = new Scanner(System.in);
+            int escolhasCertas[] = {1, 2, 3, 4};
+            int escolha = escaner.nextInt();
+            int parar = 0;
+            //System.out.printf("%d", escolha);
+            for(int i = 0; i<(escolhasCertas.length);i++ )
+            {
+                if(escolha == escolhasCertas[i])
+                {
+                    parar = 1;
+                }
+            }
+            if(parar == 0)
+            {
+                throw new RuntimeException("valor nao encontrado!");
+            }
+            else{
+                if( escolha == 1)
+                {
+                    System.out.println("criar jogador");
+                    numeroJogadores++;
+                    Jogador jogador = new Jogador(numeroJogadores);
+                    listaJogadores.add(jogador);
+                    System.out.printf("jogador adicionado com exito");
+                }
+                else
+                {
+                    if(escolha==2)
+                    {
+                        System.out.println("digite o numero do jogador que vc quer pescar");
+                        int jogadorEscolhido = escaner.nextInt();
+                        if(jogadorEscolhido > numeroJogadores)
+                        {
+                            throw new RuntimeException("jogador inexistente");
+                        }
+                        if(jogadorEscolhido <= 0)
+                        {
+                            throw new RuntimeException("numero negativo");
+                        }
+                        else{
+                            System.out.println("jogador encontrado");
+                    }
+                }
+                    else 
+                    {
+                        if(escolha == 4)
+                        {
+                            for (int b= 0; b<numeroJogadores; b++)
+                            {
+                                System.out.printf("jogador %d\n",)
+                            }
+                        }
+                    }
+                }
+            }
+                
+            
+        }
+            
+        }
+
+
+
+         //imprimindo
+            /*for(int i=0; i<= 51; i++)
+            {
+            
+                int n = numeroParaNome(lista.get(i).numero);
+                if(n ==1)
+                    System.out.printf("%d ", lista.get(i).numero);
+
+                System.out.printf("%s\n", lista.get(i).naipeNome);
+            } */
+
